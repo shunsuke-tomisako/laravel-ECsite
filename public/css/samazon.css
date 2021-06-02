@@ -148,3 +148,23 @@ label {
   letter-spacing: normal;
   color: #0fbe9f;
 }
+
+.samazon-header-search-input {
+  border: solid 1px #e5e5e5;
+}
+
+.samazon-header-search-button {
+  background-color: #0fbe9f;
+}
+
+.samazon-header-search-icon {
+  color: #ffffff;
+}
+
+.samazon-header-fav-icon {
+  color: #191919;
+}
+
+.samazon-header-shoppingcart-icon {
+  color: #ffffff;
+}
