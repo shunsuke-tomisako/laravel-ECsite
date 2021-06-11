@@ -50,16 +50,22 @@
         <tbody>
             @foreach($products as $product)
             <tr>
-                <th scope="row">{{ $product->id }}</td>
-                <td><img src="{{ asset('img/dummy.jpg')}}" class="img-fluid h-10"></td>
-                <td>{{ $product->name }}</td>
-                <td>{{ $product->price }}</td>
-                <td>{{ $product->category["name"] }}</td>
-                <td>{{ $product->category["major_category_name"] }}</td>
+                <th class="align-middle" scope="row">{{ $product->id }}</td>
                 <td>
+                @if ($product->image !== "")
+                <img src="{{ asset('storage/products/'.$product->image) }}" class="h-10 img-fluid">
+                @else
+                <img src="{{ asset('img/dummy.jpg')}}" class="h-10 img-fuild">
+                @endif
+                </td>
+                <td class="align-middle">{{ $product->name }}</td>
+                <td class="align-middle">{{ $product->price }}</td>
+                <td class="align-middle">{{ $product->category["name"] }}</td>
+                <td class="align-middle">{{ $product->category["major_category_name"] }}</td>
+                <td class="align-middle">
                     <a href="/dashboard/products/{{ $product->id }}/edit" class="dashboard-edit-link">編集</a>
                 </td>
-                <td>
+                <td class="align-middle">
                     <a href="/dashboard/products/{{ $product->id }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dashboard-delete-link">
                         削除
                     </a>
